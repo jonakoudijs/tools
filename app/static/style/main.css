@@ -1,0 +1,305 @@
+/* --- import --- */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/* --- general --- */
+body {
+  margin: 0;
+  padding: 0;
+  background: #2D3235;
+  height: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #BBB;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+a {
+  color: #FFF;
+}
+hr {
+  margin: 0px 0px 20px;
+  padding: 0px;
+  border: none;
+  border-top: 1px solid #777;
+}
+.center {
+  margin-top: 300px;
+  text-align: center;
+}
+.button-category {
+  margin-left: 10px;
+}
+.header .button-active, .six.columns .button-active {
+  color: #aaa;
+  border-color: #aaa;
+  outline: 0;
+}
+
+/* --- logo --- */
+.logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.logo img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* --- header --- */
+.header {
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+.header .button {
+  margin-right: 5px;
+}
+.header .button i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+.header .button.spotify {
+  color: #537B57;
+  border-color: #537B57;
+}
+.header .button.spotify:hover {
+  color: #6BA271;
+  border-color: #6BA271;
+}
+
+/* --- error --- */
+.error {
+  color: #FF4B40;
+  font-size: 60px;
+}
+
+/* --- home --- */
+
+
+/* --- music --- */
+.music-row {
+  margin-bottom: 40px;
+}
+.music-item {
+  position: relative;
+  border: solid 1px #777;
+  border-radius: 4px;
+  background: #333;
+  height: 120px;
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+.music-item img {
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  display: block;
+  backface-visibility: hidden;
+}
+.music-item a {
+  cursor: pointer;
+}
+.music-item-middle {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.music-item:hover img {
+  opacity: 0.3;
+}
+.music-item:hover .music-item-middle {
+  opacity: 1;
+}
+.music-item-text {
+  text-align: center;
+  color: white;
+  text-align: center;
+  padding: 1px 1px;
+}
+.music-item-icons {
+  width: 100%;
+  font-size: 40px;
+  color: #ddd;
+}
+
+/* --- spotify loader --- */
+.loader-spotify,
+.loader-spotify:before,
+.loader-spotify:after {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.0s infinite ease-in-out;
+  animation: load7 1.0s infinite ease-in-out;
+}
+.loader-spotify {
+  font-size: 6px;
+  margin: 0px 25px;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader-spotify:before,
+.loader-spotify:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader-spotify:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader-spotify:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+/* --- icons --- */
+.icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 font-awesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 1.28571429em;
+  text-align: center;
+}
+.icon-book:before {
+  content: "\f02d";
+}
+.icon-calendar:before {
+  content: "\f073";
+}
+.icon-form-error:before {
+  content: "\f057";
+}
+.icon-form-ok:before {
+  content: "\f058";
+}
+.icon-form-unknown:before {
+  content: "\f059";
+}
+.icon-form-warning:before {
+  content: "\f06a";
+}
+.icon-home:before {
+  content: "\f015";
+}
+.icon-music:before {
+  content: "\f001";
+}
+.icon-pause-circle-o:before {
+  content: "\f28c";
+}
+.icon-play-circle-o:before {
+  content: "\f01d";
+}
+.icon-spotify:before {
+  content: "\f1bc";
+}
+.icon-ticket:before {
+  content: "\f145";
+}
+.icon-user:before {
+  content: "\f007";
+}
+.icon-volume-off:before {
+  content: "\f026";
+}
+.icon-volume-up:before {
+  content: "\f028";
+}
+.icon-warning:before {
+  content: "\f071";
+}
+
+/* --- test --- */
+#embed-stack .service-function-wrapper {
+  float: left;
+}
+#embed-stack .stack-service-logo {
+  float: left;
+}
+#embed-stack .stack-service-logo img {
+  width: 140px;
+}
+#embed-stack .stack-service-name-under {
+  float: right;
+}
+
+#embed-stack .ss-powered {
+  display: none;
+}
+
+/* --- fonts --- */
+@font-face {
+  font-family: 'open-sansregular';
+  src: url('../font/opensans-regular-webfont.eot');
+  src: url('../font/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../font/opensans-regular-webfont.woff2') format('woff2'),
+       url('../font/opensans-regular-webfont.woff') format('woff'),
+       url('../font/opensans-regular-webfont.ttf') format('truetype'),
+       url('../font/opensans-regular-webfont.svg#open_sansregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open-sansbold';
+  src: url('../font/opensans-bold-webfont.eot');
+  src: url('../font/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../font/opensans-bold-webfont.woff2') format('woff2'),
+       url('../font/opensans-bold-webfont.woff') format('woff'),
+       url('../font/opensans-bold-webfont.ttf') format('truetype'),
+       url('../font/opensans-bold-webfont.svg#open_sansbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'font-awesome';
+  src: url('../font/fontawesome-webfont.eot?v=4.5.0');
+  src: url('../font/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+       url('../font/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+       url('../font/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+       url('../font/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+       url('../font/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

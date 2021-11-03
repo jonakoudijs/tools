@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <title>{{ subtitle | default(title) }} @ jona.io</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <link href="/static/style/custom.css"              rel="stylesheet" media="screen">
+  <link href="/static/favicon/apple-touch-icon.png"  rel="apple-touch-icon" sizes="180x180">
+  <link href="/static/favicon/favicon-32x32.png"     rel="icon" type="image/png" sizes="32x32">
+  <link href="/static/favicon/favicon-16x16.png"     rel="icon" type="image/png" sizes="16x16">
+  <link href="/static/favicon/manifest.json"         rel="manifest">
+  <link href="/static/favicon/safari-pinned-tab.svg" rel="mask-icon" color="#2d3235">
+</head>
+<body>
+
+<nav class="navbar is-dark" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <span class="icon">
+        <i class="fas fa-home"></i>
+      </span>
+    </a>
+    <button class="button navbar-burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/prettyprint">Prettyprint</a>
+    </div>
+
+    <div class="navbar-end">
+      <a class="navbar-item" href="https://www.jona.io">
+        Jona.io
+      </a>
+    </div>
+  </div>
+</nav>

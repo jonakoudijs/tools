@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="columns">
+    <div class="column"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="columns">
+
+    <div class="column is-one-third">
+    <form id="pretty-print-form" action="/prettyprint" method="post">
+
+      <div class="columns">
+        <div class="column is-half">
+          <label class="checkbox">
+            <input name="checklines" type="checkbox"{% if checklines %} checked{% endif%}>
+              &nbsp; Use linenumbers
+          </label>
+        </div>
+        <div class="column is-half">
+          <label class="checkbox">
+            <input name="checkvalidate" type="checkbox"{% if checkvalidate %} checked{% endif%}>
+              &nbsp; Validate code
+          </label>
+        </div>
+      </div>
+
+      <div class="control has-icons-left">
+        <div class="select is-fullwidth">
+          <select name="selectlanguage">
+            <option value="auto"{% if language == "auto" or language == "" %} selected{% endif%}>Auto detect language</option>
+            <option value="json"{% if language == "json"%} selected{% endif%}>JSON</option>
+          </select>
+        </div>
+        <div class="icon is-small is-left">
+          <i class="fas fa-code"></i>
+        </div>
+      </div>
+
+      <br/>
+
+      <textarea name="codeinput" class="textarea textarea-prettyprint" placeholder="Paste code here.." required autofocus rows="16" autocorrect="off" autocapitalize="off" spellcheck="false">{{ codeinput }}</textarea>
+
+      <br/>
+
+      <input class="button is-primary is-fullwidth" name="prettyprint-button" type="submit" value="Print">
+
+    </form>
+    </div>
+
+    <div class="column">
+      {% if checkvalidate and not valid %}
+      <div class="notification is-danger">
+        <button class="delete"></button>
+        The validation failed!
+      </div>
+      {% endif %}
+      {% if checkvalidate and valid and not language == "auto" %}
+      <div class="notification is-success">
+        <button class="delete"></button>
+        The code is valid
+      </div>
+      {% endif %}
+      {% if not checkvalidate and not valid %}
+      <div class="notification is-warning">
+        <button class="delete"></button>
+        Please be aware that the validation failed and therefor proper pretty print could not be executed.
+      </div>
+      {% endif %}
+      {% if language == "auto" and checkvalidate %}
+      <div class="notification is-warning">
+        <button class="delete"></button>
+        Validation can only be done if a language is selected, please choose one from the dropdown list.
+      </div>
+      {% endif %}
+
+      <!-- <pre class="prettyprint linenums"></pre> -->
+      <pre class="prettyprint">{{ codeoutput }}</pre>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+{% endblock %}
